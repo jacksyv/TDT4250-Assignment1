@@ -1,0 +1,448 @@
+/**
+ */
+package study.impl;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import study.Course;
+import study.CourseAllocation;
+import study.CourseGroupAllocation;
+import study.StudyPackage;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Course</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link study.impl.CourseImpl#getCode <em>Code</em>}</li>
+ *   <li>{@link study.impl.CourseImpl#getName <em>Name</em>}</li>
+ *   <li>{@link study.impl.CourseImpl#getCredit <em>Credit</em>}</li>
+ *   <li>{@link study.impl.CourseImpl#getGrade <em>Grade</em>}</li>
+ *   <li>{@link study.impl.CourseImpl#getCourseGroupAllocation <em>Course Group Allocation</em>}</li>
+ *   <li>{@link study.impl.CourseImpl#getCourseAllocation <em>Course Allocation</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
+	/**
+	 * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCode()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CODE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getCode() <em>Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCode()
+	 * @generated
+	 * @ordered
+	 */
+	protected String code = CODE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCredit() <em>Credit</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCredit()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final float CREDIT_EDEFAULT = 0.0F;
+
+	/**
+	 * The cached value of the '{@link #getCredit() <em>Credit</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCredit()
+	 * @generated
+	 * @ordered
+	 */
+	protected float credit = CREDIT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getGrade() <em>Grade</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGrade()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final char GRADE_EDEFAULT = '\u0000';
+
+	/**
+	 * The cached value of the '{@link #getGrade() <em>Grade</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGrade()
+	 * @generated
+	 * @ordered
+	 */
+	protected char grade = GRADE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getCourseGroupAllocation() <em>Course Group Allocation</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCourseGroupAllocation()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<CourseGroupAllocation> courseGroupAllocation;
+
+	/**
+	 * The cached value of the '{@link #getCourseAllocation() <em>Course Allocation</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCourseAllocation()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<CourseAllocation> courseAllocation;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CourseImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return StudyPackage.Literals.COURSE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCode() {
+		return code;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCode(String newCode) {
+		String oldCode = code;
+		code = newCode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StudyPackage.COURSE__CODE, oldCode, code));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StudyPackage.COURSE__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public float getCredit() {
+		return credit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCredit(float newCredit) {
+		float oldCredit = credit;
+		credit = newCredit;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StudyPackage.COURSE__CREDIT, oldCredit, credit));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public char getGrade() {
+		return grade;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setGrade(char newGrade) {
+		char oldGrade = grade;
+		grade = newGrade;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StudyPackage.COURSE__GRADE, oldGrade, grade));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<CourseGroupAllocation> getCourseGroupAllocation() {
+		if (courseGroupAllocation == null) {
+			courseGroupAllocation = new EObjectContainmentWithInverseEList<CourseGroupAllocation>(CourseGroupAllocation.class, this, StudyPackage.COURSE__COURSE_GROUP_ALLOCATION, StudyPackage.COURSE_GROUP_ALLOCATION__COURSE);
+		}
+		return courseGroupAllocation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<CourseAllocation> getCourseAllocation() {
+		if (courseAllocation == null) {
+			courseAllocation = new EObjectContainmentWithInverseEList<CourseAllocation>(CourseAllocation.class, this, StudyPackage.COURSE__COURSE_ALLOCATION, StudyPackage.COURSE_ALLOCATION__COURSE);
+		}
+		return courseAllocation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case StudyPackage.COURSE__COURSE_GROUP_ALLOCATION:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getCourseGroupAllocation()).basicAdd(otherEnd, msgs);
+			case StudyPackage.COURSE__COURSE_ALLOCATION:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getCourseAllocation()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case StudyPackage.COURSE__COURSE_GROUP_ALLOCATION:
+				return ((InternalEList<?>)getCourseGroupAllocation()).basicRemove(otherEnd, msgs);
+			case StudyPackage.COURSE__COURSE_ALLOCATION:
+				return ((InternalEList<?>)getCourseAllocation()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case StudyPackage.COURSE__CODE:
+				return getCode();
+			case StudyPackage.COURSE__NAME:
+				return getName();
+			case StudyPackage.COURSE__CREDIT:
+				return getCredit();
+			case StudyPackage.COURSE__GRADE:
+				return getGrade();
+			case StudyPackage.COURSE__COURSE_GROUP_ALLOCATION:
+				return getCourseGroupAllocation();
+			case StudyPackage.COURSE__COURSE_ALLOCATION:
+				return getCourseAllocation();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case StudyPackage.COURSE__CODE:
+				setCode((String)newValue);
+				return;
+			case StudyPackage.COURSE__NAME:
+				setName((String)newValue);
+				return;
+			case StudyPackage.COURSE__CREDIT:
+				setCredit((Float)newValue);
+				return;
+			case StudyPackage.COURSE__GRADE:
+				setGrade((Character)newValue);
+				return;
+			case StudyPackage.COURSE__COURSE_GROUP_ALLOCATION:
+				getCourseGroupAllocation().clear();
+				getCourseGroupAllocation().addAll((Collection<? extends CourseGroupAllocation>)newValue);
+				return;
+			case StudyPackage.COURSE__COURSE_ALLOCATION:
+				getCourseAllocation().clear();
+				getCourseAllocation().addAll((Collection<? extends CourseAllocation>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case StudyPackage.COURSE__CODE:
+				setCode(CODE_EDEFAULT);
+				return;
+			case StudyPackage.COURSE__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case StudyPackage.COURSE__CREDIT:
+				setCredit(CREDIT_EDEFAULT);
+				return;
+			case StudyPackage.COURSE__GRADE:
+				setGrade(GRADE_EDEFAULT);
+				return;
+			case StudyPackage.COURSE__COURSE_GROUP_ALLOCATION:
+				getCourseGroupAllocation().clear();
+				return;
+			case StudyPackage.COURSE__COURSE_ALLOCATION:
+				getCourseAllocation().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case StudyPackage.COURSE__CODE:
+				return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
+			case StudyPackage.COURSE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case StudyPackage.COURSE__CREDIT:
+				return credit != CREDIT_EDEFAULT;
+			case StudyPackage.COURSE__GRADE:
+				return grade != GRADE_EDEFAULT;
+			case StudyPackage.COURSE__COURSE_GROUP_ALLOCATION:
+				return courseGroupAllocation != null && !courseGroupAllocation.isEmpty();
+			case StudyPackage.COURSE__COURSE_ALLOCATION:
+				return courseAllocation != null && !courseAllocation.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (code: ");
+		result.append(code);
+		result.append(", name: ");
+		result.append(name);
+		result.append(", credit: ");
+		result.append(credit);
+		result.append(", grade: ");
+		result.append(grade);
+		result.append(')');
+		return result.toString();
+	}
+
+} //CourseImpl

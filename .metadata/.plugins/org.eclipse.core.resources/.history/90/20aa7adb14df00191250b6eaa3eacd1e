@@ -1,0 +1,140 @@
+/**
+ */
+package study;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Specialisation</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link study.Specialisation#getName <em>Name</em>}</li>
+ *   <li>{@link study.Specialisation#getSpecialisationAllocations <em>Specialisation Allocations</em>}</li>
+ *   <li>{@link study.Specialisation#getProgram <em>Program</em>}</li>
+ *   <li>{@link study.Specialisation#getRequirement <em>Requirement</em>}</li>
+ *   <li>{@link study.Specialisation#getStudyplan <em>Studyplan</em>}</li>
+ * </ul>
+ *
+ * @see study.StudyPackage#getSpecialisation()
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='mustHavePreviousSpecialisation mustBePartOfProgram'"
+ * @generated
+ */
+public interface Specialisation extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see study.StudyPackage#getSpecialisation_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link study.Specialisation#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Specialisation Allocations</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link study.SpecialisationAllocation#getSpecialisation <em>Specialisation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Specialisation Allocations</em>' reference.
+	 * @see #setSpecialisationAllocations(SpecialisationAllocation)
+	 * @see study.StudyPackage#getSpecialisation_SpecialisationAllocations()
+	 * @see study.SpecialisationAllocation#getSpecialisation
+	 * @model opposite="specialisation"
+	 * @generated
+	 */
+	SpecialisationAllocation getSpecialisationAllocations();
+
+	/**
+	 * Sets the value of the '{@link study.Specialisation#getSpecialisationAllocations <em>Specialisation Allocations</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Specialisation Allocations</em>' reference.
+	 * @see #getSpecialisationAllocations()
+	 * @generated
+	 */
+	void setSpecialisationAllocations(SpecialisationAllocation value);
+
+	/**
+	 * Returns the value of the '<em><b>Program</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Program</em>' reference.
+	 * @see #setProgram(Program)
+	 * @see study.StudyPackage#getSpecialisation_Program()
+	 * @model
+	 * @generated
+	 */
+	Program getProgram();
+
+	/**
+	 * Sets the value of the '{@link study.Specialisation#getProgram <em>Program</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Program</em>' reference.
+	 * @see #getProgram()
+	 * @generated
+	 */
+	void setProgram(Program value);
+
+	/**
+	 * Returns the value of the '<em><b>Requirement</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Requirement</em>' attribute.
+	 * @see #setRequirement(String)
+	 * @see study.StudyPackage#getSpecialisation_Requirement()
+	 * @model
+	 * @generated
+	 */
+	String getRequirement();
+
+	/**
+	 * Sets the value of the '{@link study.Specialisation#getRequirement <em>Requirement</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Requirement</em>' attribute.
+	 * @see #getRequirement()
+	 * @generated
+	 */
+	void setRequirement(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Studyplan</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Studyplan</em>' reference.
+	 * @see #setStudyplan(StudyPlan)
+	 * @see study.StudyPackage#getSpecialisation_Studyplan()
+	 * @model
+	 * @generated
+	 */
+	StudyPlan getStudyplan();
+
+	/**
+	 * Sets the value of the '{@link study.Specialisation#getStudyplan <em>Studyplan</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Studyplan</em>' reference.
+	 * @see #getStudyplan()
+	 * @generated
+	 */
+	void setStudyplan(StudyPlan value);
+
+} // Specialisation

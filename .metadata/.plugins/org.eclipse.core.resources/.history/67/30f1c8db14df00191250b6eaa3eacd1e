@@ -1,0 +1,464 @@
+/**
+ */
+package study.impl;
+
+import java.lang.reflect.InvocationTargetException;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import study.Course;
+import study.CourseAllocation;
+import study.Program;
+import study.Semester;
+import study.Specialisation;
+import study.SpecialisationAllocation;
+import study.StudyFactory;
+import study.StudyPackage;
+import study.StudyPlan;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Plan</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link study.impl.StudyPlanImpl#getCredit <em>Credit</em>}</li>
+ *   <li>{@link study.impl.StudyPlanImpl#getCourseallocation <em>Courseallocation</em>}</li>
+ *   <li>{@link study.impl.StudyPlanImpl#getCourses <em>Courses</em>}</li>
+ *   <li>{@link study.impl.StudyPlanImpl#getProgram <em>Program</em>}</li>
+ *   <li>{@link study.impl.StudyPlanImpl#getSpecialisationAllocation <em>Specialisation Allocation</em>}</li>
+ *   <li>{@link study.impl.StudyPlanImpl#getSpecialisation <em>Specialisation</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class StudyPlanImpl extends MinimalEObjectImpl.Container implements StudyPlan {
+	/**
+	 * The default value of the '{@link #getCredit() <em>Credit</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCredit()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final float CREDIT_EDEFAULT = 0.0F;
+
+	/**
+	 * The cached value of the '{@link #getCredit() <em>Credit</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCredit()
+	 * @generated
+	 * @ordered
+	 */
+	protected float credit = CREDIT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getCourseallocation() <em>Courseallocation</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCourseallocation()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<CourseAllocation> courseallocation;
+
+	/**
+	 * The cached value of the '{@link #getCourses() <em>Courses</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCourses()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Course> courses;
+
+	/**
+	 * The cached value of the '{@link #getProgram() <em>Program</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProgram()
+	 * @generated
+	 * @ordered
+	 */
+	protected Program program;
+
+	/**
+	 * The cached value of the '{@link #getSpecialisationAllocation() <em>Specialisation Allocation</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSpecialisationAllocation()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SpecialisationAllocation> specialisationAllocation;
+
+	/**
+	 * The cached value of the '{@link #getSpecialisation() <em>Specialisation</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSpecialisation()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Specialisation> specialisation;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StudyPlanImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return StudyPackage.Literals.STUDY_PLAN;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public float getCredit() {
+		return credit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCredit(float newCredit) {
+		float oldCredit = credit;
+		credit = newCredit;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StudyPackage.STUDY_PLAN__CREDIT, oldCredit, credit));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<CourseAllocation> getCourseallocation() {
+		if (courseallocation == null) {
+			courseallocation = new EObjectWithInverseResolvingEList<CourseAllocation>(CourseAllocation.class, this, StudyPackage.STUDY_PLAN__COURSEALLOCATION, StudyPackage.COURSE_ALLOCATION__STUDYPLAN);
+		}
+		return courseallocation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Course> getCourses() {
+		if (courses == null) {
+			courses = new EObjectContainmentEList<Course>(Course.class, this, StudyPackage.STUDY_PLAN__COURSES);
+		}
+		return courses;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Program getProgram() {
+		if (program != null && program.eIsProxy()) {
+			InternalEObject oldProgram = (InternalEObject)program;
+			program = (Program)eResolveProxy(oldProgram);
+			if (program != oldProgram) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StudyPackage.STUDY_PLAN__PROGRAM, oldProgram, program));
+			}
+		}
+		return program;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Program basicGetProgram() {
+		return program;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setProgram(Program newProgram) {
+		Program oldProgram = program;
+		program = newProgram;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StudyPackage.STUDY_PLAN__PROGRAM, oldProgram, program));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<SpecialisationAllocation> getSpecialisationAllocation() {
+		if (specialisationAllocation == null) {
+			specialisationAllocation = new EObjectResolvingEList<SpecialisationAllocation>(SpecialisationAllocation.class, this, StudyPackage.STUDY_PLAN__SPECIALISATION_ALLOCATION);
+		}
+		return specialisationAllocation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Specialisation> getSpecialisation() {
+		if (specialisation == null) {
+			specialisation = new EObjectResolvingEList<Specialisation>(Specialisation.class, this, StudyPackage.STUDY_PLAN__SPECIALISATION);
+		}
+		return specialisation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @NOT generated
+	 */
+	@Override
+	public void chooseCourse(Course course, Semester semester, StudyPlan studyplan) {
+		CourseAllocation courseAllocation = StudyFactory.eINSTANCE.createCourseAllocation();
+		courseAllocation.setCourse(course);
+		courseAllocation.setSemester(semester);
+		courseAllocation.setStudyplan(studyplan);
+		getCourseallocation().add(courseAllocation);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @NOT generated
+	 */
+	@Override
+	public void chooseSpecialisation(Specialisation specialisation, StudyPlan studyplan) {
+		SpecialisationAllocation specialisationAllocation = StudyFactory.eINSTANCE.createSpecialisationAllocation();
+		specialisationAllocation.setSpecialisation(specialisation);
+		specialisationAllocation.setStudyplan(studyplan);
+		getSpecialisationAllocation().add(specialisationAllocation);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case StudyPackage.STUDY_PLAN__COURSEALLOCATION:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getCourseallocation()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case StudyPackage.STUDY_PLAN__COURSEALLOCATION:
+				return ((InternalEList<?>)getCourseallocation()).basicRemove(otherEnd, msgs);
+			case StudyPackage.STUDY_PLAN__COURSES:
+				return ((InternalEList<?>)getCourses()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case StudyPackage.STUDY_PLAN__CREDIT:
+				return getCredit();
+			case StudyPackage.STUDY_PLAN__COURSEALLOCATION:
+				return getCourseallocation();
+			case StudyPackage.STUDY_PLAN__COURSES:
+				return getCourses();
+			case StudyPackage.STUDY_PLAN__PROGRAM:
+				if (resolve) return getProgram();
+				return basicGetProgram();
+			case StudyPackage.STUDY_PLAN__SPECIALISATION_ALLOCATION:
+				return getSpecialisationAllocation();
+			case StudyPackage.STUDY_PLAN__SPECIALISATION:
+				return getSpecialisation();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case StudyPackage.STUDY_PLAN__CREDIT:
+				setCredit((Float)newValue);
+				return;
+			case StudyPackage.STUDY_PLAN__COURSEALLOCATION:
+				getCourseallocation().clear();
+				getCourseallocation().addAll((Collection<? extends CourseAllocation>)newValue);
+				return;
+			case StudyPackage.STUDY_PLAN__COURSES:
+				getCourses().clear();
+				getCourses().addAll((Collection<? extends Course>)newValue);
+				return;
+			case StudyPackage.STUDY_PLAN__PROGRAM:
+				setProgram((Program)newValue);
+				return;
+			case StudyPackage.STUDY_PLAN__SPECIALISATION_ALLOCATION:
+				getSpecialisationAllocation().clear();
+				getSpecialisationAllocation().addAll((Collection<? extends SpecialisationAllocation>)newValue);
+				return;
+			case StudyPackage.STUDY_PLAN__SPECIALISATION:
+				getSpecialisation().clear();
+				getSpecialisation().addAll((Collection<? extends Specialisation>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case StudyPackage.STUDY_PLAN__CREDIT:
+				setCredit(CREDIT_EDEFAULT);
+				return;
+			case StudyPackage.STUDY_PLAN__COURSEALLOCATION:
+				getCourseallocation().clear();
+				return;
+			case StudyPackage.STUDY_PLAN__COURSES:
+				getCourses().clear();
+				return;
+			case StudyPackage.STUDY_PLAN__PROGRAM:
+				setProgram((Program)null);
+				return;
+			case StudyPackage.STUDY_PLAN__SPECIALISATION_ALLOCATION:
+				getSpecialisationAllocation().clear();
+				return;
+			case StudyPackage.STUDY_PLAN__SPECIALISATION:
+				getSpecialisation().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case StudyPackage.STUDY_PLAN__CREDIT:
+				return credit != CREDIT_EDEFAULT;
+			case StudyPackage.STUDY_PLAN__COURSEALLOCATION:
+				return courseallocation != null && !courseallocation.isEmpty();
+			case StudyPackage.STUDY_PLAN__COURSES:
+				return courses != null && !courses.isEmpty();
+			case StudyPackage.STUDY_PLAN__PROGRAM:
+				return program != null;
+			case StudyPackage.STUDY_PLAN__SPECIALISATION_ALLOCATION:
+				return specialisationAllocation != null && !specialisationAllocation.isEmpty();
+			case StudyPackage.STUDY_PLAN__SPECIALISATION:
+				return specialisation != null && !specialisation.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case StudyPackage.STUDY_PLAN___CHOOSE_COURSE__COURSE_SEMESTER_STUDYPLAN:
+				chooseCourse((Course)arguments.get(0), (Semester)arguments.get(1), (StudyPlan)arguments.get(2));
+				return null;
+			case StudyPackage.STUDY_PLAN___CHOOSE_SPECIALISATION__SPECIALISATION_STUDYPLAN:
+				chooseSpecialisation((Specialisation)arguments.get(0), (StudyPlan)arguments.get(1));
+				return null;
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (credit: ");
+		result.append(credit);
+		result.append(')');
+		return result.toString();
+	}
+
+} //StudyPlanImpl

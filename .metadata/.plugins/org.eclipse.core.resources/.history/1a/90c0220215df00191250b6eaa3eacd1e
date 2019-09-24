@@ -1,0 +1,73 @@
+/**
+ */
+package study;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Course Group Allocation</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link study.CourseGroupAllocation#getCourse <em>Course</em>}</li>
+ *   <li>{@link study.CourseGroupAllocation#getCoursegroup <em>Coursegroup</em>}</li>
+ * </ul>
+ *
+ * @see study.StudyPackage#getCourseGroupAllocation()
+ * @model
+ * @generated
+ */
+public interface CourseGroupAllocation extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Course</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link study.Course#getCourseGroupAllocation <em>Course Group Allocation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Course</em>' container reference.
+	 * @see #setCourse(Course)
+	 * @see study.StudyPackage#getCourseGroupAllocation_Course()
+	 * @see study.Course#getCourseGroupAllocation
+	 * @model opposite="courseGroupAllocation" transient="false"
+	 * @generated
+	 */
+	Course getCourse();
+
+	/**
+	 * Sets the value of the '{@link study.CourseGroupAllocation#getCourse <em>Course</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Course</em>' container reference.
+	 * @see #getCourse()
+	 * @generated
+	 */
+	void setCourse(Course value);
+
+	/**
+	 * Returns the value of the '<em><b>Coursegroup</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link study.Coursegroup#getGroupallocations <em>Groupallocations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Coursegroup</em>' reference.
+	 * @see #setCoursegroup(Coursegroup)
+	 * @see study.StudyPackage#getCourseGroupAllocation_Coursegroup()
+	 * @see study.Coursegroup#getGroupallocations
+	 * @model opposite="groupallocations"
+	 * @generated
+	 */
+	Coursegroup getCoursegroup();
+
+	/**
+	 * Sets the value of the '{@link study.CourseGroupAllocation#getCoursegroup <em>Coursegroup</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Coursegroup</em>' reference.
+	 * @see #getCoursegroup()
+	 * @generated
+	 */
+	void setCoursegroup(Coursegroup value);
+
+} // CourseGroupAllocation

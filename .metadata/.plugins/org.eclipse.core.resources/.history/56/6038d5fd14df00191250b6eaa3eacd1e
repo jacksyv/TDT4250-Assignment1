@@ -1,0 +1,289 @@
+/**
+ */
+package study.impl;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EcoreUtil;
+
+import study.Course;
+import study.CourseGroupAllocation;
+import study.Coursegroup;
+import study.StudyPackage;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Course Group Allocation</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link study.impl.CourseGroupAllocationImpl#getCourse <em>Course</em>}</li>
+ *   <li>{@link study.impl.CourseGroupAllocationImpl#getCoursegroup <em>Coursegroup</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class CourseGroupAllocationImpl extends MinimalEObjectImpl.Container implements CourseGroupAllocation {
+	/**
+	 * The cached value of the '{@link #getCoursegroup() <em>Coursegroup</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCoursegroup()
+	 * @generated
+	 * @ordered
+	 */
+	protected Coursegroup coursegroup;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CourseGroupAllocationImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return StudyPackage.Literals.COURSE_GROUP_ALLOCATION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Course getCourse() {
+		if (eContainerFeatureID() != StudyPackage.COURSE_GROUP_ALLOCATION__COURSE) return null;
+		return (Course)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetCourse(Course newCourse, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newCourse, StudyPackage.COURSE_GROUP_ALLOCATION__COURSE, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCourse(Course newCourse) {
+		if (newCourse != eInternalContainer() || (eContainerFeatureID() != StudyPackage.COURSE_GROUP_ALLOCATION__COURSE && newCourse != null)) {
+			if (EcoreUtil.isAncestor(this, newCourse))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newCourse != null)
+				msgs = ((InternalEObject)newCourse).eInverseAdd(this, StudyPackage.COURSE__COURSE_GROUP_ALLOCATION, Course.class, msgs);
+			msgs = basicSetCourse(newCourse, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StudyPackage.COURSE_GROUP_ALLOCATION__COURSE, newCourse, newCourse));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Coursegroup getCoursegroup() {
+		if (coursegroup != null && coursegroup.eIsProxy()) {
+			InternalEObject oldCoursegroup = (InternalEObject)coursegroup;
+			coursegroup = (Coursegroup)eResolveProxy(oldCoursegroup);
+			if (coursegroup != oldCoursegroup) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StudyPackage.COURSE_GROUP_ALLOCATION__COURSEGROUP, oldCoursegroup, coursegroup));
+			}
+		}
+		return coursegroup;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Coursegroup basicGetCoursegroup() {
+		return coursegroup;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetCoursegroup(Coursegroup newCoursegroup, NotificationChain msgs) {
+		Coursegroup oldCoursegroup = coursegroup;
+		coursegroup = newCoursegroup;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, StudyPackage.COURSE_GROUP_ALLOCATION__COURSEGROUP, oldCoursegroup, newCoursegroup);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCoursegroup(Coursegroup newCoursegroup) {
+		if (newCoursegroup != coursegroup) {
+			NotificationChain msgs = null;
+			if (coursegroup != null)
+				msgs = ((InternalEObject)coursegroup).eInverseRemove(this, StudyPackage.COURSEGROUP__GROUPALLOCATIONS, Coursegroup.class, msgs);
+			if (newCoursegroup != null)
+				msgs = ((InternalEObject)newCoursegroup).eInverseAdd(this, StudyPackage.COURSEGROUP__GROUPALLOCATIONS, Coursegroup.class, msgs);
+			msgs = basicSetCoursegroup(newCoursegroup, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StudyPackage.COURSE_GROUP_ALLOCATION__COURSEGROUP, newCoursegroup, newCoursegroup));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case StudyPackage.COURSE_GROUP_ALLOCATION__COURSE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetCourse((Course)otherEnd, msgs);
+			case StudyPackage.COURSE_GROUP_ALLOCATION__COURSEGROUP:
+				if (coursegroup != null)
+					msgs = ((InternalEObject)coursegroup).eInverseRemove(this, StudyPackage.COURSEGROUP__GROUPALLOCATIONS, Coursegroup.class, msgs);
+				return basicSetCoursegroup((Coursegroup)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case StudyPackage.COURSE_GROUP_ALLOCATION__COURSE:
+				return basicSetCourse(null, msgs);
+			case StudyPackage.COURSE_GROUP_ALLOCATION__COURSEGROUP:
+				return basicSetCoursegroup(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case StudyPackage.COURSE_GROUP_ALLOCATION__COURSE:
+				return eInternalContainer().eInverseRemove(this, StudyPackage.COURSE__COURSE_GROUP_ALLOCATION, Course.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case StudyPackage.COURSE_GROUP_ALLOCATION__COURSE:
+				return getCourse();
+			case StudyPackage.COURSE_GROUP_ALLOCATION__COURSEGROUP:
+				if (resolve) return getCoursegroup();
+				return basicGetCoursegroup();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case StudyPackage.COURSE_GROUP_ALLOCATION__COURSE:
+				setCourse((Course)newValue);
+				return;
+			case StudyPackage.COURSE_GROUP_ALLOCATION__COURSEGROUP:
+				setCoursegroup((Coursegroup)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case StudyPackage.COURSE_GROUP_ALLOCATION__COURSE:
+				setCourse((Course)null);
+				return;
+			case StudyPackage.COURSE_GROUP_ALLOCATION__COURSEGROUP:
+				setCoursegroup((Coursegroup)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case StudyPackage.COURSE_GROUP_ALLOCATION__COURSE:
+				return getCourse() != null;
+			case StudyPackage.COURSE_GROUP_ALLOCATION__COURSEGROUP:
+				return coursegroup != null;
+		}
+		return super.eIsSet(featureID);
+	}
+
+} //CourseGroupAllocationImpl

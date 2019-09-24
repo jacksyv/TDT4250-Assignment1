@@ -1,0 +1,242 @@
+/**
+ */
+package study.impl;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import study.CourseAllocation;
+import study.Semester;
+import study.StudyPackage;
+
+import study.util.Level;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Semester</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link study.impl.SemesterImpl#getLevel <em>Level</em>}</li>
+ *   <li>{@link study.impl.SemesterImpl#getCourseAllocations <em>Course Allocations</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class SemesterImpl extends MinimalEObjectImpl.Container implements Semester {
+	/**
+	 * The default value of the '{@link #getLevel() <em>Level</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLevel()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Level LEVEL_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getLevel() <em>Level</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLevel()
+	 * @generated
+	 * @ordered
+	 */
+	protected Level level = LEVEL_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getCourseAllocations() <em>Course Allocations</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCourseAllocations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<CourseAllocation> courseAllocations;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SemesterImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return StudyPackage.Literals.SEMESTER;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Level getLevel() {
+		return level;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setLevel(Level newLevel) {
+		Level oldLevel = level;
+		level = newLevel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StudyPackage.SEMESTER__LEVEL, oldLevel, level));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<CourseAllocation> getCourseAllocations() {
+		if (courseAllocations == null) {
+			courseAllocations = new EObjectWithInverseResolvingEList<CourseAllocation>(CourseAllocation.class, this, StudyPackage.SEMESTER__COURSE_ALLOCATIONS, StudyPackage.COURSE_ALLOCATION__SEMESTER);
+		}
+		return courseAllocations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case StudyPackage.SEMESTER__COURSE_ALLOCATIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getCourseAllocations()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case StudyPackage.SEMESTER__COURSE_ALLOCATIONS:
+				return ((InternalEList<?>)getCourseAllocations()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case StudyPackage.SEMESTER__LEVEL:
+				return getLevel();
+			case StudyPackage.SEMESTER__COURSE_ALLOCATIONS:
+				return getCourseAllocations();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case StudyPackage.SEMESTER__LEVEL:
+				setLevel((Level)newValue);
+				return;
+			case StudyPackage.SEMESTER__COURSE_ALLOCATIONS:
+				getCourseAllocations().clear();
+				getCourseAllocations().addAll((Collection<? extends CourseAllocation>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case StudyPackage.SEMESTER__LEVEL:
+				setLevel(LEVEL_EDEFAULT);
+				return;
+			case StudyPackage.SEMESTER__COURSE_ALLOCATIONS:
+				getCourseAllocations().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case StudyPackage.SEMESTER__LEVEL:
+				return LEVEL_EDEFAULT == null ? level != null : !LEVEL_EDEFAULT.equals(level);
+			case StudyPackage.SEMESTER__COURSE_ALLOCATIONS:
+				return courseAllocations != null && !courseAllocations.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (level: ");
+		result.append(level);
+		result.append(')');
+		return result.toString();
+	}
+
+} //SemesterImpl

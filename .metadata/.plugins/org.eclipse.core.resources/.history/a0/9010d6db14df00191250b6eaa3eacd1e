@@ -1,0 +1,61 @@
+#
+
+pluginName = Assignment Edit Support
+providerName = www.example.org
+
+_UI_CreateChild_text = {0}
+_UI_CreateChild_text2 = {1} {0}
+_UI_CreateChild_text3 = {1}
+_UI_CreateChild_tooltip = Create New {0} Under {1} Feature
+_UI_CreateChild_description = Create a new child of type {0} for the {1} feature of the selected {2}.
+_UI_CreateSibling_description = Create a new sibling of type {0} for the selected {2}, under the {1} feature of their parent.
+
+_UI_PropertyDescriptor_description = The {0} of the {1}
+
+_UI_Course_type = Course
+_UI_Specialisation_type = Specialisation
+_UI_Semester_type = Semester
+_UI_Program_type = Program
+_UI_StudyPlan_type = Plan
+_UI_Coursegroup_type = Coursegroup
+_UI_SpecialisationAllocation_type = Specialisation Allocation
+_UI_CourseGroupAllocation_type = Course Group Allocation
+_UI_CourseAllocation_type = Course Allocation
+_UI_Unknown_type = Object
+
+_UI_Unknown_datatype= Value
+
+_UI_Course_code_feature = Code
+_UI_Course_name_feature = Name
+_UI_Course_credit_feature = Credit
+_UI_Course_grade_feature = Grade
+_UI_Course_courseGroupAllocation_feature = Course Group Allocation
+_UI_Course_courseAllocation_feature = Course Allocation
+_UI_Specialisation_name_feature = Name
+_UI_Specialisation_specialisationAllocations_feature = Specialisation Allocations
+_UI_Specialisation_program_feature = Program
+_UI_Specialisation_requirement_feature = Requirement
+_UI_Specialisation_studyplan_feature = Studyplan
+_UI_Semester_level_feature = Level
+_UI_Semester_courseAllocations_feature = Course Allocations
+_UI_Program_name_feature = Name
+_UI_Program_length_feature = Length
+_UI_Program_specialisationAllocations_feature = Specialisation Allocations
+_UI_Program_courses_feature = Courses
+_UI_StudyPlan_credit_feature = Credit
+_UI_StudyPlan_courseallocation_feature = Courseallocation
+_UI_StudyPlan_courses_feature = Courses
+_UI_StudyPlan_program_feature = Program
+_UI_StudyPlan_specialisationAllocation_feature = Specialisation Allocation
+_UI_StudyPlan_specialisation_feature = Specialisation
+_UI_Coursegroup_groupallocations_feature = Groupallocations
+_UI_SpecialisationAllocation_program_feature = Program
+_UI_SpecialisationAllocation_specialisation_feature = Specialisation
+_UI_SpecialisationAllocation_studyplan_feature = Studyplan
+_UI_CourseGroupAllocation_course_feature = Course
+_UI_CourseGroupAllocation_coursegroup_feature = Coursegroup
+_UI_CourseAllocation_course_feature = Course
+_UI_CourseAllocation_studyplan_feature = Studyplan
+_UI_CourseAllocation_semester_feature = Semester
+_UI_Unknown_feature = Unspecified
+

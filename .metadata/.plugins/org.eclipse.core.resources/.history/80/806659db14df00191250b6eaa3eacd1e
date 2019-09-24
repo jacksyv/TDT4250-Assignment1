@@ -1,0 +1,147 @@
+/**
+ */
+package study;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Course</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link study.Course#getCode <em>Code</em>}</li>
+ *   <li>{@link study.Course#getName <em>Name</em>}</li>
+ *   <li>{@link study.Course#getCredit <em>Credit</em>}</li>
+ *   <li>{@link study.Course#getGrade <em>Grade</em>}</li>
+ *   <li>{@link study.Course#getCourseGroupAllocation <em>Course Group Allocation</em>}</li>
+ *   <li>{@link study.Course#getCourseAllocation <em>Course Allocation</em>}</li>
+ * </ul>
+ *
+ * @see study.StudyPackage#getCourse()
+ * @model
+ * @generated
+ */
+public interface Course extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Code</em>' attribute.
+	 * @see #setCode(String)
+	 * @see study.StudyPackage#getCourse_Code()
+	 * @model
+	 * @generated
+	 */
+	String getCode();
+
+	/**
+	 * Sets the value of the '{@link study.Course#getCode <em>Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Code</em>' attribute.
+	 * @see #getCode()
+	 * @generated
+	 */
+	void setCode(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see study.StudyPackage#getCourse_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link study.Course#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Credit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Credit</em>' attribute.
+	 * @see #setCredit(float)
+	 * @see study.StudyPackage#getCourse_Credit()
+	 * @model
+	 * @generated
+	 */
+	float getCredit();
+
+	/**
+	 * Sets the value of the '{@link study.Course#getCredit <em>Credit</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Credit</em>' attribute.
+	 * @see #getCredit()
+	 * @generated
+	 */
+	void setCredit(float value);
+
+	/**
+	 * Returns the value of the '<em><b>Grade</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Grade</em>' attribute.
+	 * @see #setGrade(char)
+	 * @see study.StudyPackage#getCourse_Grade()
+	 * @model
+	 * @generated
+	 */
+	char getGrade();
+
+	/**
+	 * Sets the value of the '{@link study.Course#getGrade <em>Grade</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Grade</em>' attribute.
+	 * @see #getGrade()
+	 * @generated
+	 */
+	void setGrade(char value);
+
+	/**
+	 * Returns the value of the '<em><b>Course Group Allocation</b></em>' containment reference list.
+	 * The list contents are of type {@link study.CourseGroupAllocation}.
+	 * It is bidirectional and its opposite is '{@link study.CourseGroupAllocation#getCourse <em>Course</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Course Group Allocation</em>' containment reference list.
+	 * @see study.StudyPackage#getCourse_CourseGroupAllocation()
+	 * @see study.CourseGroupAllocation#getCourse
+	 * @model opposite="course" containment="true"
+	 * @generated
+	 */
+	EList<CourseGroupAllocation> getCourseGroupAllocation();
+
+	/**
+	 * Returns the value of the '<em><b>Course Allocation</b></em>' containment reference list.
+	 * The list contents are of type {@link study.CourseAllocation}.
+	 * It is bidirectional and its opposite is '{@link study.CourseAllocation#getCourse <em>Course</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Course Allocation</em>' containment reference list.
+	 * @see study.StudyPackage#getCourse_CourseAllocation()
+	 * @see study.CourseAllocation#getCourse
+	 * @model opposite="course" containment="true"
+	 * @generated
+	 */
+	EList<CourseAllocation> getCourseAllocation();
+
+} // Course

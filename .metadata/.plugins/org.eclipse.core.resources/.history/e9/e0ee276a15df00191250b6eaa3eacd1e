@@ -1,0 +1,380 @@
+/**
+ */
+package study.impl;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EcoreUtil;
+
+import study.Course;
+import study.CourseAllocation;
+import study.Semester;
+import study.StudyPackage;
+import study.StudyPlan;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Course Allocation</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link study.impl.CourseAllocationImpl#getCourse <em>Course</em>}</li>
+ *   <li>{@link study.impl.CourseAllocationImpl#getStudyplan <em>Studyplan</em>}</li>
+ *   <li>{@link study.impl.CourseAllocationImpl#getSemester <em>Semester</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class CourseAllocationImpl extends MinimalEObjectImpl.Container implements CourseAllocation {
+	/**
+	 * The cached value of the '{@link #getStudyplan() <em>Studyplan</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStudyplan()
+	 * @generated
+	 * @ordered
+	 */
+	protected StudyPlan studyplan;
+
+	/**
+	 * The cached value of the '{@link #getSemester() <em>Semester</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSemester()
+	 * @generated
+	 * @ordered
+	 */
+	protected Semester semester;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CourseAllocationImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return StudyPackage.Literals.COURSE_ALLOCATION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Course getCourse() {
+		if (eContainerFeatureID() != StudyPackage.COURSE_ALLOCATION__COURSE) return null;
+		return (Course)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetCourse(Course newCourse, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newCourse, StudyPackage.COURSE_ALLOCATION__COURSE, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCourse(Course newCourse) {
+		if (newCourse != eInternalContainer() || (eContainerFeatureID() != StudyPackage.COURSE_ALLOCATION__COURSE && newCourse != null)) {
+			if (EcoreUtil.isAncestor(this, newCourse))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newCourse != null)
+				msgs = ((InternalEObject)newCourse).eInverseAdd(this, StudyPackage.COURSE__COURSE_ALLOCATION, Course.class, msgs);
+			msgs = basicSetCourse(newCourse, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StudyPackage.COURSE_ALLOCATION__COURSE, newCourse, newCourse));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public StudyPlan getStudyplan() {
+		if (studyplan != null && studyplan.eIsProxy()) {
+			InternalEObject oldStudyplan = (InternalEObject)studyplan;
+			studyplan = (StudyPlan)eResolveProxy(oldStudyplan);
+			if (studyplan != oldStudyplan) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StudyPackage.COURSE_ALLOCATION__STUDYPLAN, oldStudyplan, studyplan));
+			}
+		}
+		return studyplan;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StudyPlan basicGetStudyplan() {
+		return studyplan;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetStudyplan(StudyPlan newStudyplan, NotificationChain msgs) {
+		StudyPlan oldStudyplan = studyplan;
+		studyplan = newStudyplan;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, StudyPackage.COURSE_ALLOCATION__STUDYPLAN, oldStudyplan, newStudyplan);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setStudyplan(StudyPlan newStudyplan) {
+		if (newStudyplan != studyplan) {
+			NotificationChain msgs = null;
+			if (studyplan != null)
+				msgs = ((InternalEObject)studyplan).eInverseRemove(this, StudyPackage.STUDY_PLAN__COURSEALLOCATION, StudyPlan.class, msgs);
+			if (newStudyplan != null)
+				msgs = ((InternalEObject)newStudyplan).eInverseAdd(this, StudyPackage.STUDY_PLAN__COURSEALLOCATION, StudyPlan.class, msgs);
+			msgs = basicSetStudyplan(newStudyplan, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StudyPackage.COURSE_ALLOCATION__STUDYPLAN, newStudyplan, newStudyplan));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Semester getSemester() {
+		if (semester != null && semester.eIsProxy()) {
+			InternalEObject oldSemester = (InternalEObject)semester;
+			semester = (Semester)eResolveProxy(oldSemester);
+			if (semester != oldSemester) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StudyPackage.COURSE_ALLOCATION__SEMESTER, oldSemester, semester));
+			}
+		}
+		return semester;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Semester basicGetSemester() {
+		return semester;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSemester(Semester newSemester, NotificationChain msgs) {
+		Semester oldSemester = semester;
+		semester = newSemester;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, StudyPackage.COURSE_ALLOCATION__SEMESTER, oldSemester, newSemester);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSemester(Semester newSemester) {
+		if (newSemester != semester) {
+			NotificationChain msgs = null;
+			if (semester != null)
+				msgs = ((InternalEObject)semester).eInverseRemove(this, StudyPackage.SEMESTER__COURSE_ALLOCATIONS, Semester.class, msgs);
+			if (newSemester != null)
+				msgs = ((InternalEObject)newSemester).eInverseAdd(this, StudyPackage.SEMESTER__COURSE_ALLOCATIONS, Semester.class, msgs);
+			msgs = basicSetSemester(newSemester, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StudyPackage.COURSE_ALLOCATION__SEMESTER, newSemester, newSemester));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case StudyPackage.COURSE_ALLOCATION__COURSE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetCourse((Course)otherEnd, msgs);
+			case StudyPackage.COURSE_ALLOCATION__STUDYPLAN:
+				if (studyplan != null)
+					msgs = ((InternalEObject)studyplan).eInverseRemove(this, StudyPackage.STUDY_PLAN__COURSEALLOCATION, StudyPlan.class, msgs);
+				return basicSetStudyplan((StudyPlan)otherEnd, msgs);
+			case StudyPackage.COURSE_ALLOCATION__SEMESTER:
+				if (semester != null)
+					msgs = ((InternalEObject)semester).eInverseRemove(this, StudyPackage.SEMESTER__COURSE_ALLOCATIONS, Semester.class, msgs);
+				return basicSetSemester((Semester)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case StudyPackage.COURSE_ALLOCATION__COURSE:
+				return basicSetCourse(null, msgs);
+			case StudyPackage.COURSE_ALLOCATION__STUDYPLAN:
+				return basicSetStudyplan(null, msgs);
+			case StudyPackage.COURSE_ALLOCATION__SEMESTER:
+				return basicSetSemester(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case StudyPackage.COURSE_ALLOCATION__COURSE:
+				return eInternalContainer().eInverseRemove(this, StudyPackage.COURSE__COURSE_ALLOCATION, Course.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case StudyPackage.COURSE_ALLOCATION__COURSE:
+				return getCourse();
+			case StudyPackage.COURSE_ALLOCATION__STUDYPLAN:
+				if (resolve) return getStudyplan();
+				return basicGetStudyplan();
+			case StudyPackage.COURSE_ALLOCATION__SEMESTER:
+				if (resolve) return getSemester();
+				return basicGetSemester();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case StudyPackage.COURSE_ALLOCATION__COURSE:
+				setCourse((Course)newValue);
+				return;
+			case StudyPackage.COURSE_ALLOCATION__STUDYPLAN:
+				setStudyplan((StudyPlan)newValue);
+				return;
+			case StudyPackage.COURSE_ALLOCATION__SEMESTER:
+				setSemester((Semester)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case StudyPackage.COURSE_ALLOCATION__COURSE:
+				setCourse((Course)null);
+				return;
+			case StudyPackage.COURSE_ALLOCATION__STUDYPLAN:
+				setStudyplan((StudyPlan)null);
+				return;
+			case StudyPackage.COURSE_ALLOCATION__SEMESTER:
+				setSemester((Semester)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case StudyPackage.COURSE_ALLOCATION__COURSE:
+				return getCourse() != null;
+			case StudyPackage.COURSE_ALLOCATION__STUDYPLAN:
+				return studyplan != null;
+			case StudyPackage.COURSE_ALLOCATION__SEMESTER:
+				return semester != null;
+		}
+		return super.eIsSet(featureID);
+	}
+
+} //CourseAllocationImpl

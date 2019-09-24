@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated study -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="study.presentation.StudyModelWizardID"
+            name="%_UI_StudyModelWizard_label"
+            class="study.presentation.StudyModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/StudyModelFile.gif">
+         <description>%_UI_StudyModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated study -->
+      <editor
+            id="study.presentation.StudyEditorID"
+            name="%_UI_StudyEditor_label"
+            icon="icons/full/obj16/StudyModelFile.gif"
+            extensions="study"
+            class="study.presentation.StudyEditor"
+            contributorClass="study.presentation.StudyActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

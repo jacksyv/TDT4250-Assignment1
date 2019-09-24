@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="study" nsURI="platform:/plugin/University/model/study.ecore"
+    nsPrefix="study">
+  <eClassifiers xsi:type="ecore:EClass" name="Course">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="credit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="grade" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EChar"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="courseGroupAllocation"
+        upperBound="-1" eType="#//CourseGroupAllocation" containment="true" eOpposite="#//CourseGroupAllocation/course"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="courseAllocation" upperBound="-1"
+        eType="#//CourseAllocation" containment="true" eOpposite="#//CourseAllocation/course"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Specialisation">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="mustHavePreviousSpecialisation mustBePartOfProgram"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specialisationAllocations"
+        eType="#//SpecialisationAllocation" eOpposite="#//SpecialisationAllocation/specialisation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="program" eType="#//Program"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requirement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="studyplan" eType="#//StudyPlan"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Semester">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="#//Level"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="courseAllocations" upperBound="-1"
+        eType="#//CourseAllocation" eOpposite="#//CourseAllocation/semester"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Level" instanceClassName="study.util.Level"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Program">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="programMustHaveEnoughCredits"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specialisationAllocations"
+        upperBound="-1" eType="#//SpecialisationAllocation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="courses" upperBound="-1"
+        eType="#//Course"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StudyPlan">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="semesterShouldntHaveTooLittleCredit"/>
+    </eAnnotations>
+    <eOperations name="chooseCourse">
+      <eParameters name="course" eType="#//Course"/>
+      <eParameters name="semester" eType="#//Semester"/>
+      <eParameters name="studyplan" eType="#//StudyPlan"/>
+    </eOperations>
+    <eOperations name="chooseSpecialisation">
+      <eParameters name="specialisation" eType="#//Specialisation"/>
+      <eParameters name="studyplan" eType="#//StudyPlan"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="credit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="courseallocation" upperBound="-1"
+        eType="#//CourseAllocation" eOpposite="#//CourseAllocation/studyplan"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="courses" upperBound="-1"
+        eType="#//Course" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="program" eType="#//Program"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specialisationAllocation"
+        upperBound="-1" eType="#//SpecialisationAllocation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specialisation" upperBound="2"
+        eType="#//Specialisation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Coursegroup">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="groupallocations" upperBound="-1"
+        eType="#//CourseGroupAllocation" eOpposite="#//CourseGroupAllocation/coursegroup"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SpecialisationAllocation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="program" eType="#//Program"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specialisation" eType="#//Specialisation"
+        eOpposite="#//Specialisation/specialisationAllocations"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="studyplan" eType="#//StudyPlan"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CourseGroupAllocation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="course" eType="#//Course"
+        eOpposite="#//Course/courseGroupAllocation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coursegroup" eType="#//Coursegroup"
+        eOpposite="#//Coursegroup/groupallocations"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CourseAllocation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="course" eType="#//Course"
+        eOpposite="#//Course/courseAllocation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="studyplan" eType="#//StudyPlan"
+        eOpposite="#//StudyPlan/courseallocation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semester" eType="#//Semester"
+        eOpposite="#//Semester/courseAllocations"/>
+  </eClassifiers>
+</ecore:EPackage>
