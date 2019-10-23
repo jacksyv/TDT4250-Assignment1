@@ -2,4 +2,4 @@ Includes EMF modeling for a studyplan at a university with semesters, courses, c
 
 The repo consists of generated code from an EMF generator project. The main model is located under model.
 
-Acceleo M2Text transformation is also implemented, the generated html can be found under University/Model, the Acceleo transformation file can be found
+Acceleo M2Text transformation is also implemented, the generated html can be found under University/Model, the Acceleo transformation file can be found at org.eclipse.acceleo.module.sample/src/org/eclipse/acceleo/module/sample/main/
