@@ -13,8 +13,6 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import study.*;
 
-import study.util.Level;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
@@ -82,8 +80,6 @@ public class StudyFactoryImpl extends EFactoryImpl implements StudyFactory {
 		switch (eDataType.getClassifierID()) {
 			case StudyPackage.GRADES:
 				return creategradesFromString(eDataType, initialValue);
-			case StudyPackage.LEVEL:
-				return createLevelFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -99,8 +95,6 @@ public class StudyFactoryImpl extends EFactoryImpl implements StudyFactory {
 		switch (eDataType.getClassifierID()) {
 			case StudyPackage.GRADES:
 				return convertgradesToString(eDataType, instanceValue);
-			case StudyPackage.LEVEL:
-				return convertLevelToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -212,24 +206,6 @@ public class StudyFactoryImpl extends EFactoryImpl implements StudyFactory {
 	 */
 	public String convertgradesToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Level createLevelFromString(EDataType eDataType, String initialValue) {
-		return (Level)super.createFromString(eDataType, initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertLevelToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

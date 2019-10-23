@@ -103,8 +103,6 @@ public class StudyValidator extends EObjectValidator {
 				return validatecourseAllocation((courseAllocation)value, diagnostics, context);
 			case StudyPackage.GRADES:
 				return validategrades((grades)value, diagnostics, context);
-			case StudyPackage.LEVEL:
-				return validateLevel((Level)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -125,45 +123,7 @@ public class StudyValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateProgram(Program program, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(program, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(program, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(program, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(program, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(program, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(program, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(program, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(program, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(program, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProgram_programMustHaveEnoughCredits(program, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * Validates the programMustHaveEnoughCredits constraint of '<em>Program</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateProgram_programMustHaveEnoughCredits(Program program, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "programMustHaveEnoughCredits", getObjectLabel(program, context) },
-						 new Object[] { program },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return validate_EveryDefaultConstraint(program, diagnostics, context);
 	}
 
 	/**
@@ -365,15 +325,6 @@ public class StudyValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validategrades(grades grades, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateLevel(Level level, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

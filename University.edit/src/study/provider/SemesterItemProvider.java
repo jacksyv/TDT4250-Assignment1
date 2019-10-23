@@ -25,8 +25,6 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import study.Semester;
 import study.StudyPackage;
 
-import study.util.Level;
-
 /**
  * This is the item provider adapter for a {@link study.Semester} object.
  * <!-- begin-user-doc -->
@@ -62,33 +60,12 @@ public class SemesterItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addLevelPropertyDescriptor(object);
 			addSpecialisationPropertyDescriptor(object);
 			addCoursesPropertyDescriptor(object);
+			addSeasonPropertyDescriptor(object);
+			addYearPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Level feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLevelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Semester_level_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Semester_level_feature", "_UI_Semester_type"),
-				 StudyPackage.Literals.SEMESTER__LEVEL,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -136,6 +113,50 @@ public class SemesterItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Season feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSeasonPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Semester_season_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Semester_season_feature", "_UI_Semester_type"),
+				 StudyPackage.Literals.SEMESTER__SEASON,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Year feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addYearPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Semester_year_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Semester_year_feature", "_UI_Semester_type"),
+				 StudyPackage.Literals.SEMESTER__YEAR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Semester.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -154,8 +175,7 @@ public class SemesterItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Level labelValue = ((Semester)object).getLevel();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((Semester)object).getSeason();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Semester_type") :
 			getString("_UI_Semester_type") + " " + label;
@@ -174,7 +194,8 @@ public class SemesterItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Semester.class)) {
-			case StudyPackage.SEMESTER__LEVEL:
+			case StudyPackage.SEMESTER__SEASON:
+			case StudyPackage.SEMESTER__YEAR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

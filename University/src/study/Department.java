@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link study.Department#getPrograms <em>Programs</em>}</li>
  *   <li>{@link study.Department#getStudents <em>Students</em>}</li>
  *   <li>{@link study.Department#getSpecialisations <em>Specialisations</em>}</li>
+ *   <li>{@link study.Department#getSemesters <em>Semesters</em>}</li>
  * </ul>
  *
  * @see study.StudyPackage#getDepartment()
@@ -127,5 +128,19 @@ public interface Department extends EObject {
 	 * @generated
 	 */
 	EList<Specialisation> getSpecialisations();
+
+	/**
+	 * Returns the value of the '<em><b>Semesters</b></em>' containment reference list.
+	 * The list contents are of type {@link study.Semester}.
+	 * It is bidirectional and its opposite is '{@link study.Semester#getDepartment <em>Department</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Semesters</em>' containment reference list.
+	 * @see study.StudyPackage#getDepartment_Semesters()
+	 * @see study.Semester#getDepartment
+	 * @model opposite="department" containment="true"
+	 * @generated
+	 */
+	EList<Semester> getSemesters();
 
 } // Department

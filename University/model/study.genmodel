@@ -13,7 +13,6 @@
       <genEnumLiterals ecoreEnumLiteral="study.ecore#//grades/E"/>
       <genEnumLiterals ecoreEnumLiteral="study.ecore#//grades/F"/>
     </genEnums>
-    <genDataTypes ecoreDataType="study.ecore#//Level"/>
     <genClasses ecoreClass="study.ecore#//Department">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute study.ecore#//Department/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute study.ecore#//Department/code"/>
@@ -21,6 +20,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference study.ecore#//Department/programs"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference study.ecore#//Department/students"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference study.ecore#//Department/specialisations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference study.ecore#//Department/semesters"/>
     </genClasses>
     <genClasses ecoreClass="study.ecore#//Program">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute study.ecore#//Program/name"/>
@@ -39,8 +39,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute study.ecore#//Course/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute study.ecore#//Course/code"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute study.ecore#//Course/credits"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute study.ecore#//Course/level"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference study.ecore#//Course/department"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute study.ecore#//Course/season"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute study.ecore#//Course/year"/>
     </genClasses>
     <genClasses ecoreClass="study.ecore#//Specialisation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute study.ecore#//Specialisation/name"/>
@@ -51,9 +52,11 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference study.ecore#//Specialisation/department"/>
     </genClasses>
     <genClasses ecoreClass="study.ecore#//Semester">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute study.ecore#//Semester/level"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference study.ecore#//Semester/specialisation"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference study.ecore#//Semester/courses"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference study.ecore#//Semester/department"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute study.ecore#//Semester/season"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute study.ecore#//Semester/year"/>
     </genClasses>
     <genClasses ecoreClass="study.ecore#//StudyPlan">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference study.ecore#//StudyPlan/semester"/>

@@ -13,6 +13,8 @@
         eType="#//Student" containment="true" eOpposite="#//Student/department"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="specialisations" lowerBound="1"
         upperBound="-1" eType="#//Specialisation" containment="true" eOpposite="#//Specialisation/department"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semesters" upperBound="-1"
+        eType="#//Semester" containment="true" eOpposite="#//Semester/department"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Program">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -36,9 +38,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="credits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="#//Level"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="department" lowerBound="1"
         eType="#//Department" eOpposite="#//Department/courses"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="season" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Specialisation">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -59,13 +62,15 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="semesterShouldntHaveTooLittleCredit"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="#//Level"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="specialisation" lowerBound="1"
         eType="#//Specialisation" eOpposite="#//Specialisation/semesters"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="courses" lowerBound="1"
         upperBound="-1" eType="#//Course"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="department" eType="#//Department"
+        eOpposite="#//Department/semesters"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="season" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="Level" instanceClassName="study.util.Level"/>
   <eClassifiers xsi:type="ecore:EClass" name="StudyPlan">
     <eOperations name="chooseCourse">
       <eParameters name="course" eType="#//Course"/>

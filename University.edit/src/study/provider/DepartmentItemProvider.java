@@ -129,6 +129,7 @@ public class DepartmentItemProvider
 			childrenFeatures.add(StudyPackage.Literals.DEPARTMENT__PROGRAMS);
 			childrenFeatures.add(StudyPackage.Literals.DEPARTMENT__STUDENTS);
 			childrenFeatures.add(StudyPackage.Literals.DEPARTMENT__SPECIALISATIONS);
+			childrenFeatures.add(StudyPackage.Literals.DEPARTMENT__SEMESTERS);
 		}
 		return childrenFeatures;
 	}
@@ -192,6 +193,7 @@ public class DepartmentItemProvider
 			case StudyPackage.DEPARTMENT__PROGRAMS:
 			case StudyPackage.DEPARTMENT__STUDENTS:
 			case StudyPackage.DEPARTMENT__SPECIALISATIONS:
+			case StudyPackage.DEPARTMENT__SEMESTERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -228,6 +230,11 @@ public class DepartmentItemProvider
 			(createChildParameter
 				(StudyPackage.Literals.DEPARTMENT__SPECIALISATIONS,
 				 StudyFactory.eINSTANCE.createSpecialisation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(StudyPackage.Literals.DEPARTMENT__SEMESTERS,
+				 StudyFactory.eINSTANCE.createSemester()));
 	}
 
 	/**

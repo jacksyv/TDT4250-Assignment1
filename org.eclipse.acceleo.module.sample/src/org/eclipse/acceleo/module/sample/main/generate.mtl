@@ -1,0 +1,123 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.eclipse.org/emf/2002/Ecore', 'platform:/plugin/University/model/study.ecore')]
+
+
+[template public generateElement(department : Department)]
+[comment @main/]
+[file (department.name.concat('.html'), false, 'UTF-8')]
+
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>[department.name/]Study Plan</title>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+margin: 10px 20% 50px 20%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+width: 15%;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+h4 {
+  font-family: arial, sans-serif;
+margin-left:20%;
+font-size: 0.95em;
+}
+
+h1 {
+  font-family: arial, sans-serif;
+width: 100%;
+text-align:center;
+font-size: 3em;
+}
+
+h2 {
+  font-family: arial, sans-serif;
+width: 100%;
+text-align:center;
+font-size: 2em;
+}
+
+h3 {
+  font-family: arial, sans-serif;
+width: 100%;
+text-align:center;
+font-size: 1.4em;
+}
+
+hr {
+width: 60%;
+margin-left: 20%;
+margin-right: 20%;
+margin-bottom: 60px;
+}
+</style>
+</head>
+<body>
+
+[for (program : Program | department.programs)]
+	[generateProgram(program)/]
+[/for]
+</body>
+</html>
+[/file]
+[/template]
+
+[template public generateProgram(program : Program)]
+<div>
+<h1> [program.name /] </h2>
+[for (specialisation : Specialisation | program.specialisations) ]
+[generateSpecialisation(specialisation) /]
+[/for]
+</div>
+[/template]
+
+
+[template public generateSpecialisation(specialisation : Specialisation)]
+<h2>[specialisation.name /]</h2>
+[if (specialisation.requirement -> size() > 0)]
+[generateSpecialisationRequirement(specialisation) /]
+[/if]
+<table>
+[for (semester : Semester | specialisation.semesters) ]
+[ generateSemester(semester) /]
+[/for]
+</table>
+<hr>
+[/template]
+
+[template public generateSpecialisationRequirement(specialisation : Specialisation)]
+<h3>[specialisation.requirement/]</h3>
+[/template]
+
+[template public generateSemester(semester : Semester)]
+[for (course : Course | semester.courses) ]
+<tr>
+<th>[semester.season/]</th>
+<th>[semester.year/]</th>
+<th>[course.code/]</th>
+<th>[course.name/]</th>
+<th>[course.credits/]</th>
+</tr>
+[/for]
+
+[/template]
+
+[template public generateCourse(course: Course)]
+
+<tr>
+<td></td>
+<td></td>
+</tr>
+[/template]

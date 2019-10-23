@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<study:Department
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:study="platform:/plugin/University/model/study.ecore"
+    xsi:schemaLocation="platform:/plugin/University/model/study.ecore study.ecore"
+    name="Institutt for datateknologi og informatikk"
+    code="IDI">
+  <courses name="Operativsystemer"
+      code="TDT4186"
+      credits="7.5"
+      season="Spring"
+      year="2019"/>
+  <courses name="Programvarearkitektur"
+      code="TDT4240"
+      credits="7.5"
+      season="Spring"
+      year="2019"/>
+  <courses name="Teknologiledelse"
+      code="TIØ4258"
+      credits="7.5"
+      season="Spring"
+      year="2019"/>
+  <courses name="Algoritmekonstruksjon"
+      code="TDT4125"
+      credits="7.5"
+      season="Spring"
+      year="2019"/>
+  <courses name="Avansert Programvaredesign"
+      code="TDT4250"
+      credits="7.5"
+      season="Fall"
+      year="2019"/>
+  <courses name="Kundestyrt prosjekt"
+      code="TDT4290"
+      credits="15.0"
+      season="Fall"
+      year="2019"/>
+  <courses name="Programvaresikkerhet"
+      code="TDT4237"
+      credits="7.5"
+      season="Fall"
+      year="2019"/>
+  <courses name="Datavarehus og datagruvedrift"
+      code="TDT4300"
+      credits="7.5"
+      season="Spring"
+      year="2019"/>
+  <programs
+      name="Datateknologi"
+      code="TDT"
+      numYears="5"
+      specialisations="//@specialisations.0 //@specialisations.1 //@specialisations.2"/>
+  <students
+      name="Ola Nordmann"
+      specialisations="//@specialisations.0 //@specialisations.1">
+    <studyPlan>
+      <courses
+          grade="B"
+          studyPlan="//@students.0/@studyPlan"
+          course="//@courses.1"/>
+      <courses
+          grade="C"
+          studyPlan="//@students.0/@studyPlan"
+          course="//@courses.0"/>
+      <courses
+          grade="B"
+          studyPlan="//@students.0/@studyPlan"
+          course="//@courses.2"/>
+      <courses
+          grade="D"
+          studyPlan="//@students.0/@studyPlan"
+          course="//@courses.3"/>
+    </studyPlan>
+  </students>
+  <specialisations
+      name="Programvaresystemer"
+      program="//@programs.0"
+      semesters="//@semesters.0"/>
+  <specialisations
+      name="Programvareutvikling"
+      program="//@programs.0"
+      requirement="Programvaresystemer"
+      semesters="//@semesters.1"/>
+  <specialisations
+      name="Databaser og Søk"
+      program="//@programs.0"
+      semesters="//@semesters.2"/>
+  <semesters
+      specialisation="//@specialisations.0"
+      courses="//@courses.0 //@courses.1 //@courses.2 //@courses.3"
+      season="Fall"
+      year="2019"/>
+  <semesters
+      specialisation="//@specialisations.1"
+      courses="//@courses.4 //@courses.5 //@courses.6"
+      season="Spring"
+      year="2019"/>
+  <semesters
+      specialisation="//@specialisations.2"
+      courses="//@courses.0 //@courses.2 //@courses.3 //@courses.7"
+      season="Fall"
+      year="2019"/>
+</study:Department>

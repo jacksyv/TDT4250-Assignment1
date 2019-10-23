@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import study.Course;
 import study.Department;
 import study.Program;
+import study.Semester;
 import study.Specialisation;
 import study.Student;
 import study.StudyPackage;
@@ -39,6 +40,7 @@ import study.StudyPackage;
  *   <li>{@link study.impl.DepartmentImpl#getPrograms <em>Programs</em>}</li>
  *   <li>{@link study.impl.DepartmentImpl#getStudents <em>Students</em>}</li>
  *   <li>{@link study.impl.DepartmentImpl#getSpecialisations <em>Specialisations</em>}</li>
+ *   <li>{@link study.impl.DepartmentImpl#getSemesters <em>Semesters</em>}</li>
  * </ul>
  *
  * @generated
@@ -123,6 +125,16 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 	 * @ordered
 	 */
 	protected EList<Specialisation> specialisations;
+
+	/**
+	 * The cached value of the '{@link #getSemesters() <em>Semesters</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSemesters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Semester> semesters;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -246,6 +258,19 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<Semester> getSemesters() {
+		if (semesters == null) {
+			semesters = new EObjectContainmentWithInverseEList<Semester>(Semester.class, this, StudyPackage.DEPARTMENT__SEMESTERS, StudyPackage.SEMESTER__DEPARTMENT);
+		}
+		return semesters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -258,6 +283,8 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getStudents()).basicAdd(otherEnd, msgs);
 			case StudyPackage.DEPARTMENT__SPECIALISATIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSpecialisations()).basicAdd(otherEnd, msgs);
+			case StudyPackage.DEPARTMENT__SEMESTERS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSemesters()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -278,6 +305,8 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 				return ((InternalEList<?>)getStudents()).basicRemove(otherEnd, msgs);
 			case StudyPackage.DEPARTMENT__SPECIALISATIONS:
 				return ((InternalEList<?>)getSpecialisations()).basicRemove(otherEnd, msgs);
+			case StudyPackage.DEPARTMENT__SEMESTERS:
+				return ((InternalEList<?>)getSemesters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -302,6 +331,8 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 				return getStudents();
 			case StudyPackage.DEPARTMENT__SPECIALISATIONS:
 				return getSpecialisations();
+			case StudyPackage.DEPARTMENT__SEMESTERS:
+				return getSemesters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -337,6 +368,10 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 				getSpecialisations().clear();
 				getSpecialisations().addAll((Collection<? extends Specialisation>)newValue);
 				return;
+			case StudyPackage.DEPARTMENT__SEMESTERS:
+				getSemesters().clear();
+				getSemesters().addAll((Collection<? extends Semester>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -367,6 +402,9 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 			case StudyPackage.DEPARTMENT__SPECIALISATIONS:
 				getSpecialisations().clear();
 				return;
+			case StudyPackage.DEPARTMENT__SEMESTERS:
+				getSemesters().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -391,6 +429,8 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 				return students != null && !students.isEmpty();
 			case StudyPackage.DEPARTMENT__SPECIALISATIONS:
 				return specialisations != null && !specialisations.isEmpty();
+			case StudyPackage.DEPARTMENT__SEMESTERS:
+				return semesters != null && !semesters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

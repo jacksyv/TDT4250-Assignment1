@@ -4,8 +4,6 @@ package study;
 
 import org.eclipse.emf.ecore.EObject;
 
-import study.util.Level;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Course</b></em>'.
@@ -18,8 +16,9 @@ import study.util.Level;
  *   <li>{@link study.Course#getName <em>Name</em>}</li>
  *   <li>{@link study.Course#getCode <em>Code</em>}</li>
  *   <li>{@link study.Course#getCredits <em>Credits</em>}</li>
- *   <li>{@link study.Course#getLevel <em>Level</em>}</li>
  *   <li>{@link study.Course#getDepartment <em>Department</em>}</li>
+ *   <li>{@link study.Course#getSeason <em>Season</em>}</li>
+ *   <li>{@link study.Course#getYear <em>Year</em>}</li>
  * </ul>
  *
  * @see study.StudyPackage#getCourse()
@@ -94,28 +93,6 @@ public interface Course extends EObject {
 	void setCredits(float value);
 
 	/**
-	 * Returns the value of the '<em><b>Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Level</em>' attribute.
-	 * @see #setLevel(Level)
-	 * @see study.StudyPackage#getCourse_Level()
-	 * @model dataType="study.Level"
-	 * @generated
-	 */
-	Level getLevel();
-
-	/**
-	 * Sets the value of the '{@link study.Course#getLevel <em>Level</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Level</em>' attribute.
-	 * @see #getLevel()
-	 * @generated
-	 */
-	void setLevel(Level value);
-
-	/**
 	 * Returns the value of the '<em><b>Department</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link study.Department#getCourses <em>Courses</em>}'.
 	 * <!-- begin-user-doc -->
@@ -138,5 +115,49 @@ public interface Course extends EObject {
 	 * @generated
 	 */
 	void setDepartment(Department value);
+
+	/**
+	 * Returns the value of the '<em><b>Season</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Season</em>' attribute.
+	 * @see #setSeason(String)
+	 * @see study.StudyPackage#getCourse_Season()
+	 * @model
+	 * @generated
+	 */
+	String getSeason();
+
+	/**
+	 * Sets the value of the '{@link study.Course#getSeason <em>Season</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Season</em>' attribute.
+	 * @see #getSeason()
+	 * @generated
+	 */
+	void setSeason(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Year</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Year</em>' attribute.
+	 * @see #setYear(int)
+	 * @see study.StudyPackage#getCourse_Year()
+	 * @model
+	 * @generated
+	 */
+	int getYear();
+
+	/**
+	 * Sets the value of the '{@link study.Course#getYear <em>Year</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Year</em>' attribute.
+	 * @see #getYear()
+	 * @generated
+	 */
+	void setYear(int value);
 
 } // Course

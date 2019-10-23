@@ -4,7 +4,6 @@ package study;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
@@ -124,13 +123,22 @@ public interface StudyPackage extends EPackage {
 	int DEPARTMENT__SPECIALISATIONS = 5;
 
 	/**
+	 * The feature id for the '<em><b>Semesters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPARTMENT__SEMESTERS = 6;
+
+	/**
 	 * The number of structural features of the '<em>Department</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPARTMENT_FEATURE_COUNT = 6;
+	int DEPARTMENT_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Department</em>' class.
@@ -316,22 +324,31 @@ public interface StudyPackage extends EPackage {
 	int COURSE__CREDITS = 2;
 
 	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COURSE__LEVEL = 3;
-
-	/**
 	 * The feature id for the '<em><b>Department</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COURSE__DEPARTMENT = 4;
+	int COURSE__DEPARTMENT = 3;
+
+	/**
+	 * The feature id for the '<em><b>Season</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COURSE__SEASON = 4;
+
+	/**
+	 * The feature id for the '<em><b>Year</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COURSE__YEAR = 5;
 
 	/**
 	 * The number of structural features of the '<em>Course</em>' class.
@@ -340,7 +357,7 @@ public interface StudyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COURSE_FEATURE_COUNT = 5;
+	int COURSE_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Course</em>' class.
@@ -444,22 +461,13 @@ public interface StudyPackage extends EPackage {
 	int SEMESTER = 5;
 
 	/**
-	 * The feature id for the '<em><b>Level</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEMESTER__LEVEL = 0;
-
-	/**
 	 * The feature id for the '<em><b>Specialisation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEMESTER__SPECIALISATION = 1;
+	int SEMESTER__SPECIALISATION = 0;
 
 	/**
 	 * The feature id for the '<em><b>Courses</b></em>' reference list.
@@ -468,7 +476,34 @@ public interface StudyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEMESTER__COURSES = 2;
+	int SEMESTER__COURSES = 1;
+
+	/**
+	 * The feature id for the '<em><b>Department</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMESTER__DEPARTMENT = 2;
+
+	/**
+	 * The feature id for the '<em><b>Season</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMESTER__SEASON = 3;
+
+	/**
+	 * The feature id for the '<em><b>Year</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMESTER__YEAR = 4;
 
 	/**
 	 * The number of structural features of the '<em>Semester</em>' class.
@@ -477,7 +512,7 @@ public interface StudyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEMESTER_FEATURE_COUNT = 3;
+	int SEMESTER_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Semester</em>' class.
@@ -618,17 +653,6 @@ public interface StudyPackage extends EPackage {
 	int GRADES = 8;
 
 	/**
-	 * The meta object id for the '<em>Level</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see study.util.Level
-	 * @see study.impl.StudyPackageImpl#getLevel()
-	 * @generated
-	 */
-	int LEVEL = 9;
-
-
-	/**
 	 * Returns the meta object for class '{@link study.Department <em>Department</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -703,6 +727,17 @@ public interface StudyPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDepartment_Specialisations();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link study.Department#getSemesters <em>Semesters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Semesters</em>'.
+	 * @see study.Department#getSemesters()
+	 * @see #getDepartment()
+	 * @generated
+	 */
+	EReference getDepartment_Semesters();
 
 	/**
 	 * Returns the meta object for class '{@link study.Program <em>Program</em>}'.
@@ -867,17 +902,6 @@ public interface StudyPackage extends EPackage {
 	EAttribute getCourse_Credits();
 
 	/**
-	 * Returns the meta object for the attribute '{@link study.Course#getLevel <em>Level</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Level</em>'.
-	 * @see study.Course#getLevel()
-	 * @see #getCourse()
-	 * @generated
-	 */
-	EAttribute getCourse_Level();
-
-	/**
 	 * Returns the meta object for the container reference '{@link study.Course#getDepartment <em>Department</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -887,6 +911,28 @@ public interface StudyPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCourse_Department();
+
+	/**
+	 * Returns the meta object for the attribute '{@link study.Course#getSeason <em>Season</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Season</em>'.
+	 * @see study.Course#getSeason()
+	 * @see #getCourse()
+	 * @generated
+	 */
+	EAttribute getCourse_Season();
+
+	/**
+	 * Returns the meta object for the attribute '{@link study.Course#getYear <em>Year</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Year</em>'.
+	 * @see study.Course#getYear()
+	 * @see #getCourse()
+	 * @generated
+	 */
+	EAttribute getCourse_Year();
 
 	/**
 	 * Returns the meta object for class '{@link study.Specialisation <em>Specialisation</em>}'.
@@ -975,17 +1021,6 @@ public interface StudyPackage extends EPackage {
 	EClass getSemester();
 
 	/**
-	 * Returns the meta object for the attribute '{@link study.Semester#getLevel <em>Level</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Level</em>'.
-	 * @see study.Semester#getLevel()
-	 * @see #getSemester()
-	 * @generated
-	 */
-	EAttribute getSemester_Level();
-
-	/**
 	 * Returns the meta object for the reference '{@link study.Semester#getSpecialisation <em>Specialisation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1006,6 +1041,39 @@ public interface StudyPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSemester_Courses();
+
+	/**
+	 * Returns the meta object for the container reference '{@link study.Semester#getDepartment <em>Department</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Department</em>'.
+	 * @see study.Semester#getDepartment()
+	 * @see #getSemester()
+	 * @generated
+	 */
+	EReference getSemester_Department();
+
+	/**
+	 * Returns the meta object for the attribute '{@link study.Semester#getSeason <em>Season</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Season</em>'.
+	 * @see study.Semester#getSeason()
+	 * @see #getSemester()
+	 * @generated
+	 */
+	EAttribute getSemester_Season();
+
+	/**
+	 * Returns the meta object for the attribute '{@link study.Semester#getYear <em>Year</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Year</em>'.
+	 * @see study.Semester#getYear()
+	 * @see #getSemester()
+	 * @generated
+	 */
+	EAttribute getSemester_Year();
 
 	/**
 	 * Returns the meta object for class '{@link study.StudyPlan <em>Plan</em>}'.
@@ -1114,17 +1182,6 @@ public interface StudyPackage extends EPackage {
 	EEnum getgrades();
 
 	/**
-	 * Returns the meta object for data type '{@link study.util.Level <em>Level</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Level</em>'.
-	 * @see study.util.Level
-	 * @model instanceClass="study.util.Level"
-	 * @generated
-	 */
-	EDataType getLevel();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1204,6 +1261,14 @@ public interface StudyPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DEPARTMENT__SPECIALISATIONS = eINSTANCE.getDepartment_Specialisations();
+
+		/**
+		 * The meta object literal for the '<em><b>Semesters</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEPARTMENT__SEMESTERS = eINSTANCE.getDepartment_Semesters();
 
 		/**
 		 * The meta object literal for the '{@link study.impl.ProgramImpl <em>Program</em>}' class.
@@ -1332,20 +1397,28 @@ public interface StudyPackage extends EPackage {
 		EAttribute COURSE__CREDITS = eINSTANCE.getCourse_Credits();
 
 		/**
-		 * The meta object literal for the '<em><b>Level</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COURSE__LEVEL = eINSTANCE.getCourse_Level();
-
-		/**
 		 * The meta object literal for the '<em><b>Department</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference COURSE__DEPARTMENT = eINSTANCE.getCourse_Department();
+
+		/**
+		 * The meta object literal for the '<em><b>Season</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COURSE__SEASON = eINSTANCE.getCourse_Season();
+
+		/**
+		 * The meta object literal for the '<em><b>Year</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COURSE__YEAR = eINSTANCE.getCourse_Year();
 
 		/**
 		 * The meta object literal for the '{@link study.impl.SpecialisationImpl <em>Specialisation</em>}' class.
@@ -1416,14 +1489,6 @@ public interface StudyPackage extends EPackage {
 		EClass SEMESTER = eINSTANCE.getSemester();
 
 		/**
-		 * The meta object literal for the '<em><b>Level</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SEMESTER__LEVEL = eINSTANCE.getSemester_Level();
-
-		/**
 		 * The meta object literal for the '<em><b>Specialisation</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1438,6 +1503,30 @@ public interface StudyPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SEMESTER__COURSES = eINSTANCE.getSemester_Courses();
+
+		/**
+		 * The meta object literal for the '<em><b>Department</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SEMESTER__DEPARTMENT = eINSTANCE.getSemester_Department();
+
+		/**
+		 * The meta object literal for the '<em><b>Season</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SEMESTER__SEASON = eINSTANCE.getSemester_Season();
+
+		/**
+		 * The meta object literal for the '<em><b>Year</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SEMESTER__YEAR = eINSTANCE.getSemester_Year();
 
 		/**
 		 * The meta object literal for the '{@link study.impl.StudyPlanImpl <em>Plan</em>}' class.
@@ -1524,16 +1613,6 @@ public interface StudyPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum GRADES = eINSTANCE.getgrades();
-
-		/**
-		 * The meta object literal for the '<em>Level</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see study.util.Level
-		 * @see study.impl.StudyPackageImpl#getLevel()
-		 * @generated
-		 */
-		EDataType LEVEL = eINSTANCE.getLevel();
 
 	}
 

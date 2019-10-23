@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see study.StudyPackage#getProgram()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='programMustHaveEnoughCredits'"
+ * @model
  * @generated
  */
 public interface Program extends EObject {

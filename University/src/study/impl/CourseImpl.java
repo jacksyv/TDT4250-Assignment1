@@ -17,8 +17,6 @@ import study.Course;
 import study.Department;
 import study.StudyPackage;
 
-import study.util.Level;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Course</b></em>'.
@@ -30,8 +28,9 @@ import study.util.Level;
  *   <li>{@link study.impl.CourseImpl#getName <em>Name</em>}</li>
  *   <li>{@link study.impl.CourseImpl#getCode <em>Code</em>}</li>
  *   <li>{@link study.impl.CourseImpl#getCredits <em>Credits</em>}</li>
- *   <li>{@link study.impl.CourseImpl#getLevel <em>Level</em>}</li>
  *   <li>{@link study.impl.CourseImpl#getDepartment <em>Department</em>}</li>
+ *   <li>{@link study.impl.CourseImpl#getSeason <em>Season</em>}</li>
+ *   <li>{@link study.impl.CourseImpl#getYear <em>Year</em>}</li>
  * </ul>
  *
  * @generated
@@ -98,24 +97,44 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	protected float credits = CREDITS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLevel() <em>Level</em>}' attribute.
+	 * The default value of the '{@link #getSeason() <em>Season</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLevel()
+	 * @see #getSeason()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Level LEVEL_EDEFAULT = null;
+	protected static final String SEASON_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getLevel() <em>Level</em>}' attribute.
+	 * The cached value of the '{@link #getSeason() <em>Season</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLevel()
+	 * @see #getSeason()
 	 * @generated
 	 * @ordered
 	 */
-	protected Level level = LEVEL_EDEFAULT;
+	protected String season = SEASON_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getYear() <em>Year</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getYear()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int YEAR_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getYear() <em>Year</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getYear()
+	 * @generated
+	 * @ordered
+	 */
+	protected int year = YEAR_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -211,29 +230,6 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * @generated
 	 */
 	@Override
-	public Level getLevel() {
-		return level;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setLevel(Level newLevel) {
-		Level oldLevel = level;
-		level = newLevel;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StudyPackage.COURSE__LEVEL, oldLevel, level));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Department getDepartment() {
 		if (eContainerFeatureID() != StudyPackage.COURSE__DEPARTMENT) return null;
 		return (Department)eInternalContainer();
@@ -269,6 +265,52 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StudyPackage.COURSE__DEPARTMENT, newDepartment, newDepartment));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getSeason() {
+		return season;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSeason(String newSeason) {
+		String oldSeason = season;
+		season = newSeason;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StudyPackage.COURSE__SEASON, oldSeason, season));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getYear() {
+		return year;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setYear(int newYear) {
+		int oldYear = year;
+		year = newYear;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StudyPackage.COURSE__YEAR, oldYear, year));
 	}
 
 	/**
@@ -329,10 +371,12 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 				return getCode();
 			case StudyPackage.COURSE__CREDITS:
 				return getCredits();
-			case StudyPackage.COURSE__LEVEL:
-				return getLevel();
 			case StudyPackage.COURSE__DEPARTMENT:
 				return getDepartment();
+			case StudyPackage.COURSE__SEASON:
+				return getSeason();
+			case StudyPackage.COURSE__YEAR:
+				return getYear();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -354,11 +398,14 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 			case StudyPackage.COURSE__CREDITS:
 				setCredits((Float)newValue);
 				return;
-			case StudyPackage.COURSE__LEVEL:
-				setLevel((Level)newValue);
-				return;
 			case StudyPackage.COURSE__DEPARTMENT:
 				setDepartment((Department)newValue);
+				return;
+			case StudyPackage.COURSE__SEASON:
+				setSeason((String)newValue);
+				return;
+			case StudyPackage.COURSE__YEAR:
+				setYear((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -381,11 +428,14 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 			case StudyPackage.COURSE__CREDITS:
 				setCredits(CREDITS_EDEFAULT);
 				return;
-			case StudyPackage.COURSE__LEVEL:
-				setLevel(LEVEL_EDEFAULT);
-				return;
 			case StudyPackage.COURSE__DEPARTMENT:
 				setDepartment((Department)null);
+				return;
+			case StudyPackage.COURSE__SEASON:
+				setSeason(SEASON_EDEFAULT);
+				return;
+			case StudyPackage.COURSE__YEAR:
+				setYear(YEAR_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -405,10 +455,12 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 				return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
 			case StudyPackage.COURSE__CREDITS:
 				return credits != CREDITS_EDEFAULT;
-			case StudyPackage.COURSE__LEVEL:
-				return LEVEL_EDEFAULT == null ? level != null : !LEVEL_EDEFAULT.equals(level);
 			case StudyPackage.COURSE__DEPARTMENT:
 				return getDepartment() != null;
+			case StudyPackage.COURSE__SEASON:
+				return SEASON_EDEFAULT == null ? season != null : !SEASON_EDEFAULT.equals(season);
+			case StudyPackage.COURSE__YEAR:
+				return year != YEAR_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -429,8 +481,10 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 		result.append(code);
 		result.append(", credits: ");
 		result.append(credits);
-		result.append(", level: ");
-		result.append(level);
+		result.append(", season: ");
+		result.append(season);
+		result.append(", year: ");
+		result.append(year);
 		result.append(')');
 		return result.toString();
 	}

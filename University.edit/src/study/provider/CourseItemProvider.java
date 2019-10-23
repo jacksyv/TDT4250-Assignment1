@@ -63,7 +63,8 @@ public class CourseItemProvider
 			addNamePropertyDescriptor(object);
 			addCodePropertyDescriptor(object);
 			addCreditsPropertyDescriptor(object);
-			addLevelPropertyDescriptor(object);
+			addSeasonPropertyDescriptor(object);
+			addYearPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -135,23 +136,45 @@ public class CourseItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Level feature.
+	 * This adds a property descriptor for the Season feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLevelPropertyDescriptor(Object object) {
+	protected void addSeasonPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Course_level_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Course_level_feature", "_UI_Course_type"),
-				 StudyPackage.Literals.COURSE__LEVEL,
+				 getString("_UI_Course_season_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Course_season_feature", "_UI_Course_type"),
+				 StudyPackage.Literals.COURSE__SEASON,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Year feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addYearPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Course_year_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Course_year_feature", "_UI_Course_type"),
+				 StudyPackage.Literals.COURSE__YEAR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -197,7 +220,8 @@ public class CourseItemProvider
 			case StudyPackage.COURSE__NAME:
 			case StudyPackage.COURSE__CODE:
 			case StudyPackage.COURSE__CREDITS:
-			case StudyPackage.COURSE__LEVEL:
+			case StudyPackage.COURSE__SEASON:
+			case StudyPackage.COURSE__YEAR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
